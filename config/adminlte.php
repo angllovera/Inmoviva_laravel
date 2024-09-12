@@ -337,7 +337,7 @@ return [
                 ],
                 [
                     'text' => 'Agentes',
-                    'url' => '#',
+                    'url' => 'agentes',
                 ],
             ],
         ],
@@ -347,7 +347,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Tipo de Propiedades',
-                    'url' => '#',
+                    'url' => 'tipos-propiedades',
                 ],
             ],
         ],

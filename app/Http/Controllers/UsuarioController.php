@@ -74,7 +74,7 @@ class UsuarioController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'email' => 'required|email|unique:usuarios,email,' . $usuario->id,
-            'telefono' => 'nullable|string|max:15'
+            'telefono' => 'nullable|string|max:8'
         ]);
 
         // Actualizar los datos del usuario
@@ -96,7 +96,6 @@ class UsuarioController extends Controller
         $usuario->delete();
 
         // Redireccionar con un mensaje de éxito
-        return redirect()->route('usuarios.index')
-            ->with('success', 'Usuario eliminado con éxito.');
+        return redirect()->route('usuarios.index')->with('success', 'Usuario eliminado con éxito.');
     }
 }
