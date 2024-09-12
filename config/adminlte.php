@@ -347,7 +347,7 @@ return [
             'submenu' => [
                 [
                     'text' => 'Tipo de Propiedades',
-                    'url' => '#',
+                    'url' => 'tipos-propiedades',
                 ],
             ],
         ],
