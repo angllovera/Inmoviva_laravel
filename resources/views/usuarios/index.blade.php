@@ -33,11 +33,12 @@
                     <td>
                         <a href="{{ route('usuarios.show', $usuario->id) }}" class="btn btn-info btn-sm">Ver</a>
                         <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-warning btn-sm">Editar</a>
-                        <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('usuarios.destroy', $usuario->id) }}" method="POST" style="display:inline-block;" onsubmit="confirmDelete(event)">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
                         </form>
+                        
                     </td>
                 </tr>
             @endforeach
