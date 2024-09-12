@@ -14,10 +14,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('usuarios', UsuarioController::class);
-
-Route::resource('agentes', AgenteController::class);
-
-Route::resource('tipos-propiedades', TipoPropiedadController::class);
-
-
+Route::middleware('auth')->group(function () {
+    Route::resource('usuarios', UsuarioController::class);
+    Route::resource('agentes', AgenteController::class);
+    Route::resource('tipos-propiedades', TipoPropiedadController::class);
+});
