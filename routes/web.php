@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgenteController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\TipoPropiedadController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\RoleController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,4 +21,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('usuarios', UsuarioController::class);
     Route::resource('agentes', AgenteController::class);
     Route::resource('tipos-propiedades', TipoPropiedadController::class);
+    Route::resource('roles', RoleController::class);
 });
