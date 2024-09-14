@@ -38,10 +38,9 @@ class RoleController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'descripcion' => 'nullable|string',
         ]);
 
-        Role::create($request->only('name', 'descripcion')); // Crea un nuevo rol con los datos del formulario
+        Role::create($request->only('name')); // Crea un nuevo rol con los datos del formulario
         return redirect()->route('roles.index')->with('success', 'Rol creado exitosamente.'); // Redirige con un mensaje de éxito
     }
 
@@ -78,10 +77,10 @@ class RoleController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'descripcion' => 'nullable|string',
+            
         ]);
 
-        $role->update($request->only('name', 'descripcion')); // Actualiza el rol con los datos del formulario
+        $role->update($request->only('name')); // Actualiza el rol con los datos del formulario
         return redirect()->route('roles.index')->with('success', 'Rol actualizado exitosamente.'); // Redirige con un mensaje de éxito
     }
 

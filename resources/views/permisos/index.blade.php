@@ -1,15 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Roles')
+@section('title', 'Permisos')
 
 @section('content_header')
-    <h1>Gestión de Roles</h1>
+    <h1>Gestión de Permisos</h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-header">
-            <a href="{{ route('roles.create') }}" class="btn btn-primary">Agregar Nuevo Rol</a>
+            <a href="{{ route('permisos.create') }}" class="btn btn-primary">Agregar Nuevo Permiso</a>
         </div>
         <div class="card-body">
             @if(session('success'))
@@ -27,25 +27,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($roles as $role)
+                    @forelse($permisos as $permiso)
                         <tr>
-                            <td>{{ $role->id }}</td>
-                            <td>{{ $role->name }}</td>
+                            <td>{{ $permiso->id }}</td>
+                            <td>{{ $permiso->name }}</td>
                             
                             <td>
-                                <a href="{{ route('roles.show', $role->id) }}" class="btn btn-info btn-sm">Ver</a>
-                                <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="{{ route('permisos.show', $permiso->id) }}" class="btn btn-info btn-sm">Ver</a>
+                                <a href="{{ route('permisos.edit', $permiso->id) }}" class="btn btn-warning btn-sm">Editar</a>
                                 
-                                <form action="{{ route('roles.destroy', $role->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('permisos.destroy', $permiso->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este Rol?')">Eliminar</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar este Permiso?')">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="text-center">No se encontraron roles</td>
+                            <td colspan="4" class="text-center">No se encontraron Permisos</td>
                         </tr>
                     @endforelse
                 </tbody>

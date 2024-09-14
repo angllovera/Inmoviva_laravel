@@ -19,8 +19,7 @@
                     <input type="text" name="name" class="form-control" placeholder="Ingresa el nombre del rol" value="{{ old('name') }}">
                 </div>
                 <div class="form-group">
-                    <label for="descripcion">Descripción</label>
-                    <textarea name="descripcion" class="form-control" placeholder="Ingresa la descripción del rol">{{ old('descripcion') }}</textarea>
+                    
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">Guardar</button>

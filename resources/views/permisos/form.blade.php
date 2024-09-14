@@ -1,21 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear Rol')
+@section('title', 'Crear Permiso')
 
 @section('content_header')
-    <h1>Crear Rol</h1>
+    <h1>Crear Permiso</h1>
 @stop
 
 @section('content')
-    <form method="POST" action="{{ route('roles.store') }}">
+    <form method="POST" action="{{ route('permisos.store') }}">
         @csrf
 
         <div class="form-group">
             <label for="name">Nombre</label>
             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
-        </div>
-
-        <div class="form-group">
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>

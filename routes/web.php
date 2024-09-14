@@ -7,7 +7,8 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\TipoPropiedadController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\RoleController;
-
+use App\Http\Controllers\PermisoController;
+use App\Models\Permission;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,4 +23,5 @@ Route::middleware('auth')->group(function () {
     Route::resource('agentes', AgenteController::class);
     Route::resource('tipos-propiedades', TipoPropiedadController::class);
     Route::resource('roles', RoleController::class);
+    Route::resource('permisos', PermisoController::class);
 });

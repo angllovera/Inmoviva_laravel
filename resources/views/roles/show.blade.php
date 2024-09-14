@@ -8,7 +8,6 @@
 
 @section('content')
     <p><strong>Nombre:</strong> {{ $role->name }}</p>
-    <p><strong>Descripción:</strong> {{ $role->descripcion }}</p>
 
     <a href="{{ route('roles.index') }}" class="btn btn-primary">Volver</a>
 @stop

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Rol')
+@section('title', 'Editar Permiso')
 
 @section('content_header')
-    <h1>Editar Rol</h1>
+    <h1>Editar Permiso</h1>
 @stop
 
 @section('content')
@@ -12,18 +12,16 @@
             <h3 class="card-title">Modificar Rol</h3>
         </div>
         <div class="card-body">
-            <form action="{{ route('roles.update', $role->id) }}" method="POST">
+            <form action="{{ route('permisos.update', $permiso->id) }}" method="POST">
                 @csrf
                 @method('PUT') <!-- Método PUT para actualizar el recurso -->
                 <div class="form-group">
-                    <label for="nombre">Nombre del Rol</label>
-                    <input type="text" name="name" class="form-control" value="{{ old('name', $role->name) }}" placeholder="Ingresa el nombre del rol">
-                </div>
-                <div class="form-group">
+                    <label for="name">Nombre del Permiso</label>
+                    <input type="text" name="name" class="form-control" value="{{ old('name', $permiso->name) }}" placeholder="Ingresa el nombre del Permiso">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Actualizar</button>
-                    <a href="{{ route('roles.index') }}" class="btn btn-secondary">Cancelar</a>
+                    <a href="{{ route('permisos.index') }}" class="btn btn-secondary">Cancelar</a>
                 </div>
             </form>
         </div>
