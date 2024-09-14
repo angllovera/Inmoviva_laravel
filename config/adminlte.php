@@ -357,6 +357,7 @@ return [
                 ],
             ],
         ],
+        
         [
             'text' => 'Propiedades',
             'icon' => 'fas fa-fw fa-share',
